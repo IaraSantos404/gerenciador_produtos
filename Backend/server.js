@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use("/uploads", express.static(path.resolve("uploads")));
 
-app.use(cors());
+// app.use(cors());
 
 
 app.use(express.json());

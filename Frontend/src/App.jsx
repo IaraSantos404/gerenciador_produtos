@@ -1,7 +1,6 @@
 import Header from "./components/Header"
 import Card from "./components/ProductCard"
 import Modal from "./components/Modal"
-import DeleteModal from "./components/DeleteModal"
 import { useState } from "react"
 import { useEffect } from "react";
 
@@ -17,7 +16,9 @@ function App() {
       try {
         const data = await getProducts();
 
-        setCards(data.data);
+        // normaliza retorno: API pode devolver a lista diretamente ([]) ou um envelope { sucess, data: [...] }
+        const list = Array.isArray(data) ? data : data?.data || [];
+        setCards(list);
       } catch(error){
         console.log("Erro:", error);
       }
