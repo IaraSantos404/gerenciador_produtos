@@ -1,8 +1,6 @@
 import { MdOutlineLightMode } from "react-icons/md";
 import { CiSquarePlus } from "react-icons/ci";
-// no hooks required here; header triggers parent actions via props
 
-// Header now receives an `onOpenCreate` prop to request opening the create modal
 export default function Header({ onOpenCreate }) {
   return (
     <header id="header">

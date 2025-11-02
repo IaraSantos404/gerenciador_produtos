@@ -14,10 +14,8 @@ const PORT = process.env.PORT || 5000;
 
 app.use("/uploads", express.static(path.resolve("uploads")));
 
-app.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-}));
+app.use(cors());
+
 
 app.use(express.json());
 
@@ -28,8 +26,3 @@ app.listen(PORT, ()=>{
   
   console.log("server iniciado na da casa porta: http://localhost:" + PORT);
 })
-
-//  
-//iarassantosdev404_db_user
-
-//mongodb+srv://iarassantosdev404_db_user:<db_password>@cluster0.hqibwdy.mongodb.net/?appName=Cluster0

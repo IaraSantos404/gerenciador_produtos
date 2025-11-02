@@ -49,7 +49,7 @@ export default function Card({ _id, image, name, price, onDelete, onEdit }) {
               setDeleteModalIsOpen(false);
             } catch (err) {
               console.error("Erro ao deletar:", err);
-              // optionally show toast
+            
             } finally {
               setDeleting(false);
             }

@@ -49,7 +49,6 @@ function App() {
 
   const handleUpdateProduct = async (id, updatedData) => {
     try {
-      // ensure price is a number
       const payload = { ...updatedData, price: Number(updatedData.price) };
       const res = await updateProduct(id, payload);
       const updated = res?.data || res;
