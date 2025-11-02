@@ -1,0 +1,19 @@
+foi isntalado o express mongoose e dotenv
+
+adicionar type: module no package
+
+pra rodar: node .\backend\server.js ou coloca comandos 
+no package pra facilitar lá em scripts
+
+e instalar o nodemon pra não ficar feito um fdp
+atualizando os caralhos dos negocios e ele n atualizar automaticamente
+
+
+
+//usamos funções async pra lidar com operações que levam tempo, como acesso a banco de dados
+// async = assincrona
+// await = aguardar
+
+ //req.body = dados do produto (json)
+  //normalmente enviado por formulario
+  //pesquisar diferença de put e patch depois

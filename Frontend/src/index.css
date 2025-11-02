@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root{
+  --background: rgb(0, 13, 29);
+  --background-button: #0d1b29;
+  --primary: #2596be;
+}
+
+@theme{
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-background-button: var(--background-button);
+}
+body{
+  background-color: var(--background);
+}
