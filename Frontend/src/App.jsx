@@ -11,6 +11,7 @@ import { getProducts, deleteProduct, updateProduct } from "./services/product"
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [cards, setCards] = useState([])
+  const BASE = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     async function load(){
@@ -27,7 +28,7 @@ function App() {
 
   const handleAddProduct = async (newProduct) =>{
     try{
-      await axios.post("http://localhost:5000/api/products", newProduct);
+      await axios.post(`${BASE}/api/products`, newProduct);
       const data = await getProducts();
       setCards(data.data);
     }catch(error){
