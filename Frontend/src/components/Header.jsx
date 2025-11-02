@@ -7,7 +7,7 @@ export default function Header({ onOpenCreate }) {
       <div className="flex justify-between items-center p-4 border-b border-gray-700">
         <h1 className="text-2xl font-bold text-primary">Gerenciador de Produtos</h1>
         <div className="flex gap-3">
-          <button className="bg-background-button p-3 cursor-pointer rounded-lg text-primary"><MdOutlineLightMode /></button>
+          {/* <button className="bg-background-button p-3 cursor-pointer rounded-lg text-primary"><MdOutlineLightMode /></button> */}
           <button onClick={onOpenCreate} className="bg-background-button p-3 cursor-pointer rounded-lg text-primary"><CiSquarePlus /></button>
         </div>
       </div>

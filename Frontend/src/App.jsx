@@ -4,9 +4,8 @@ import Modal from "./components/Modal"
 import DeleteModal from "./components/DeleteModal"
 import { useState } from "react"
 import { useEffect } from "react";
-import axios from "axios";
 
-import { getProducts, deleteProduct, updateProduct } from "./services/product"
+import { getProducts, deleteProduct, updateProduct, createProduct } from "./services/product"
 
 function App() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -28,11 +27,13 @@ function App() {
 
   const handleAddProduct = async (newProduct) =>{
     try{
-      await axios.post(`${BASE}/api/products`, newProduct);
-      const data = await getProducts();
-      setCards(data.data);
+      const payload = { ...newProduct, price: Number(newProduct.price) };
+      const res = await createProduct(payload);
+      const created = res?.data || res;
+      setCards(prev => [created, ...prev]);
     }catch(error){
       console.log("Erro ao adicionar produto:", error);
+      throw error;
     }
     
   }
